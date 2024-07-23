@@ -15,4 +15,14 @@ The following LMs are current supported:
 * [Token Dropping for efficient BERT Pretraining](https://aclanthology.org/2022.acl-long.262/)
 * [Training ELECTRA Augmented with Multi-word Selection](https://aclanthology.org/2021.findings-acl.219/) (TEAMS)
 
-Additionally, we provide a nice cheatsheet for language model pretraining on shiny TPU VM Pods.
+Additionally, the following features are provided:
+
+* Cheatsheet for TPU VM creation (incl. all necessary dependencies to pretrain models with TF Model Garden library)
+* Extended pretraining data generation script that allows e.g. to use tokenizer from Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing)
+* Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models
+
+❤️ This repository is the outcome of the last two years working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
+
+# Cheatsheet for TPU VM creation
+
+A cheatsheet that shows how to create TPU VMs incl. installing of all necessary dependencies can be found [here](TPU-VM-Cheatsheet.md).
