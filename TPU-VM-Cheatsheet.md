@@ -41,7 +41,7 @@ $ git clone https://github.com/tensorflow/models.git
 $ cd models/
 $ git checkout v2.16.0
 $ export PYTHONPATH=$(pwd)
-$ export PATH=$PATH:/home/stefan/.local/bin
+$ export PATH=$PATH:/home/$USER/.local/bin
 
 $ sudo apt-get install -y libgl1
 
