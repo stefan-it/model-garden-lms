@@ -18,7 +18,7 @@ The following LMs are current supported:
 Additionally, the following features are provided:
 
 * Cheatsheet for TPU VM creation (incl. all necessary dependencies to pretrain models with TF Model Garden library), which can be found [here](TPU-VM-Cheatsheet.md).
-* Extended pretraining data generation script that allows e.g. to use tokenizer from Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing)
+* Extended pretraining data generation script that allows e.g. to use tokenizer from Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](Pretraining-Data-Generation.md).
 * Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models
 
 ❤️ This repository is the outcome of the last two years working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
