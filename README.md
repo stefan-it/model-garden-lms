@@ -26,6 +26,14 @@ Additionally, the following features are provided:
 * An extended pretraining data generation script that allows, for example, the use of tokenizers from the Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](Pretraining-Data-Generation.md).
 * Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models, which can be found [here](Model-Conversion.md).
 
+## 🏡 Model Zoo
+
+Here's an overview of demo models that are pretrained for this repository:
+
+* FineWeb BERT
+* FineWeb Token Dropping BERT
+* FineWeb TEAMS (Discriminator and Generator)
+
 ## ❤️ Acknowledgements
 
 This repository is the outcome of the last two years of working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
