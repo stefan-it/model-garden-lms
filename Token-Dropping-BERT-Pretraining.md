@@ -1,12 +1,12 @@
 # Token Dropping BERT Pretraining
 
-In order to pretrain a token dropping BERT model, we use the same pretraining corpus as used for pretraining the BERT model. However, the pretraining data generation is slightly different, because we use the RoBERTa-style packing strategy, as this was also used in the original [Token Dropping BERT](https://aclanthology.org/2022.acl-long.262/) paper.
+To pretrain a token dropping BERT model, we use the same pretraining corpus as used for pretraining the BERT model. However, the pretraining data generation is slightly different because we use the RoBERTa-style packing strategy, as was used in the original  [Token Dropping BERT](https://aclanthology.org/2022.acl-long.262/) paper.
 
-Short summary of the RoBERTa-style packing: the pretraining corpus is splitted into chunks of a fixed size (512 in our case) - it can also cross document boundaries!
+Short summary of the RoBERTa-style packing: The pretraining corpus is split into chunks of a fixed size (512 in our case) - it can also cross document boundaries!
 
 ## TFRecord Generation - BERT Original Packing
 
-Our `create_pretraining_data.py` script is then used to create TFRecords - please note the `roberta` option as packing strategy. Another difference - compared to the TFRecord generation using the original BERT packing - is that we use a dupe factor of 2 to approx. match the number of pretraining instances of the BERT packing output!
+Our `create_pretraining_data.py` script is then used to create TFRecords. Please note the `roberta` option as packing strategy. Another difference, compared to the TFRecord generation using the original BERT packing, is that we use a dupe factor of 2 to approximately match the number of pretraining instances of the BERT packing output.
 
 ```bash
 find ./pretraining-corpus/part-{00..14}/ -type f -iname "part-*" | sort | 
@@ -28,7 +28,7 @@ All TFRecords need to be uploaded to a GCP Bucket.
 
 ## Start Pretraining
 
-The pretraining needs to be started within the `models/official/projects/token_dropping` folder. The following configuration file `fineweb_pretrain.yaml` is used that includes all necessary model and training information:
+The pretraining needs to be started within the `models/official/projects/token_dropping` folder. The following configuration file, `fineweb_pretrain.yaml`, is used and includes all necessary model and training information:
 
 ```yaml
 task:
@@ -59,11 +59,11 @@ task:
         token_keep_k: 256
 ```
 
-Please not that this configuration is sligtly different compared to the configuration that you can find in the TF Model Garden repository for the (English) BERT model. You have to make sure, that the `token_allow_list` mapping matches the order in your vocab.
+Please note that this configuration is slightly different compared to the configuration found in the TF Model Garden repository for the (English) BERT model. You must ensure that the `token_allow_list` mapping matches the order in your vocab.
 
-In our vocabulary, the special tokens (`[UNK]`, `[CLS]`, `[SEP]`, `[MASK]` and `[PAD]`) are on different index positions than in the vocabulary of the original BERT model. If you have a fancy vocabulary, please adjust the index positions according to your needs.
+In our vocabulary, the special tokens (`[UNK]`, `[CLS]`, `[SEP]`, `[MASK]` and `[PAD]`) are in different index positions than in the vocabulary of the original BERT model. If you have a custom vocabulary, please adjust the index positions according to your needs.
 
-Training-specific configurations are stored in the `fineweb_pretrain_sequence_pack.yaml`:
+Training-specific configurations are stored in the `fineweb_pretrain_sequence_pack.yaml` file:
 
 ```yaml
 task:
@@ -106,7 +106,7 @@ trainer:
   validation_steps: 64
 ```
 
-Please also make sure that you are using the correct folder on GCP (e.g. TFRecords with BERT packing are stored in the `tfrecords-op` folder, whereas the RoBERTa packed TFRecords are stored in the `tfrecords-rp` folder).
+Please also make sure that you are using the correct folder on GCP (e.g., TFRecords with BERT packing are stored in the `tfrecords-op` folder, whereas the RoBERTa packed TFRecords are stored in the `tfrecords-rp` folder).
 
 Then the pretraining can be started by running:
 
