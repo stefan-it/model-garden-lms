@@ -13,7 +13,7 @@ The following LMs are current supported:
 
 * [BERT Pretraining](https://aclanthology.org/N19-1423/) - see [pretraining instructions](BERT-Pretraining.md)
 * [Token Dropping for efficient BERT Pretraining](https://aclanthology.org/2022.acl-long.262/)
-* [Training ELECTRA Augmented with Multi-word Selection](https://aclanthology.org/2021.findings-acl.219/) (TEAMS)
+* [Training ELECTRA Augmented with Multi-word Selection](https://aclanthology.org/2021.findings-acl.219/) (TEAMS) - see [pretraining instructions](TEAMS-Pretraining.md)
 
 Additionally, the following features are provided:
 
