@@ -1,16 +1,16 @@
 # BERT Pretraining
 
-The original [BERT](https://github.com/google-research/bert) implementation can no longer be used for pretraining on TPUs, because it was written for TensorFlow 1.15 and this very old and deprecated TensorFlow version can no longer be installed on TPUs (both legacy and TPU VMs).
+The original [BERT](https://github.com/google-research/bert) implementation can no longer be used for pretraining on TPUs because it was written for TensorFlow 1.15, which is very old and deprecated. This version can no longer be installed on TPUs (both legacy and TPU VMs).
 
-However, the TensorFlow Model Garden library offers a great alternative. In this section we will pretrain a BERT model on the recently [FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) and [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) corpora released by Hugging Face.
+However, the TensorFlow Model Garden library offers a great alternative. In this section we will pretrain a BERT model on the recently released [FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) and [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) corpora by Hugging Face.
 
-More precisely we used the 10BT sample data packages (so 20BT in total) resulting in 86GB of plaintext data.
+More precisely, we used the 10BT sample data packages (so 20BT in total) resulting in 86GB of plaintext data.
 
 ## Preprocessing FineWeb corpora
 
-As the original BERT implementation uses the next sentence prediction task, we also create a sentence-splitted pretraining corpus. We use an own `datatrove` plugin that is performing sentence splitting with NLTK and plaintext extraction.
+As the original BERT implementation uses the next sentence prediction task, we also create a sentence-split pretraining corpus. We use an own `datatrove` plugin that performs sentence splitting with NLTK and plaintext extraction.
 
-The implementation - saved under `plaintext_writer.py` looks like:
+The implementation, saved under `plaintext_writer.py`, looks like this:
 
 ```python
 from typing import IO, Callable
@@ -101,7 +101,7 @@ $ du -csh extracted-plaintext-corpus/
 
 ## Pretraining Data Generation
 
-In the next step we first split our plaintext corpus into 400M chunks. These chunks are later used for generating the pretraining data (TFRecords). The following script `split_plaintext_corpus.sh` can be used:
+In the next step, we first split our plaintext corpus into 400M chunks. These chunks are later used for generating the pretraining data (TFRecords). The following script, `split_plaintext_corpus.sh`, can be used:
 
 ```bash
 # The final, splitted pretraining corpus output folder
@@ -127,7 +127,7 @@ done
 
 ## Vocab Generation
 
-In the next step, we will train a WordPiece vocabulary using the Tokenizers library. We use the complete FineWeb and FineWeb-Edu corpora for training our 64k vocab:
+Next, we will train a WordPiece vocabulary using the Tokenizers library. We use the complete FineWeb and FineWeb-Edu corpora for training our 64k vocab:
 
 ```python
 from pathlib import Path
@@ -181,11 +181,11 @@ python3 create_pretraining_data.py \
 --tokenizer_model_id stefan-it/fineweb-lms-vocab-64000
 ```
 
-All TFRecords need to be uploaded to a GCP Bucket (the `service` TPU user must have `Storage Administrator` permissions)! More hints can be found in this [section](https://github.com/GermanT5/pre-training?tab=readme-ov-file#preparing-gcp-bucket) about preparing a GCP bucket.
+All TFRecords need to be uploaded to a GCP Bucket (the `service` TPU user must have `Storage Administrator` permissions). More hints can be found in this [section](https://github.com/GermanT5/pre-training?tab=readme-ov-file#preparing-gcp-bucket) about preparing a GCP bucket.
 
 ## Start Pretraining
 
-The pretraining needs to be started within the `models/official/nlp/` folder. The following configuration file `fineweb_pretrain.yaml` is used that includes all necessary model and training information:
+The pretraining needs to be started within the `models/official/nlp/` folder. The following configuration file, `fineweb_pretrain.yaml`, is used and includes all necessary model and training information:
 
 ```yaml
 task:
