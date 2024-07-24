@@ -7,9 +7,9 @@
   <br/>
 </p>
 
-This repository show-cases language model pretraining with the awesome [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
+This repository showcases language model pretraining with the awesome [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
 
-The following LMs are current supported:
+The following LMs are currently supported:
 
 * [BERT Pretraining](https://aclanthology.org/N19-1423/) - see [pretraining instructions](BERT-Pretraining.md)
 * [Token Dropping for efficient BERT Pretraining](https://aclanthology.org/2022.acl-long.262/) - see [pretraining instructions](Token-Dropping-BERT-Pretraining.md)
@@ -17,9 +17,9 @@ The following LMs are current supported:
 
 Additionally, the following features are provided:
 
-* Cheatsheet for TPU VM creation (incl. all necessary dependencies to pretrain models with TF Model Garden library), which can be found [here](TPU-VM-Cheatsheet.md).
-* Extended pretraining data generation script that allows e.g. to use tokenizer from Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](Pretraining-Data-Generation.md).
+* A cheatsheet for TPU VM creation (including all necessary dependencies to pretrain models with TF Model Garden library), which can be found [here](TPU-VM-Cheatsheet.md).
+* An extended pretraining data generation script that allows, for example, the use of tokenizers from the Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](Pretraining-Data-Generation.md).
 * Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models, which can be found [here](Model-Conversion.md).
 
-❤️ This repository is the outcome of the last two years working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
+❤️ This repository is the outcome of the last two years of working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
 
