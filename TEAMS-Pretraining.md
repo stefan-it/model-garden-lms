@@ -1,10 +1,10 @@
 # TEAMS Pretraining
 
-We use the same pretraining data as used for [BERT Pretraining](BERT-Pretraining.md). This is btw. really great, because we can re-use the created TFRecords and this also allows to compare BERT and TEAMS directly, because potential differences in pretraining data generation can be eliminated.
+We use the same pretraining data as used for [BERT Pretraining](BERT-Pretraining.md). This is great because we can reuse the created TFRecords, which also allows us to compare BERT and TEAMS directly, eliminating potential differences in pretraining data generation.
 
 # Start Pretraining
 
-We need to change into `models/official/projects/teams` and create a yaml-based configuration under `experiments/base/fineweb-10BT-teams.yaml`:
+We need to navigate to `models/official/projects/teams` and create a YAML-based configuration file under `experiments/base/fineweb-10BT-teams.yaml`:
 
 ```yaml
 task:
