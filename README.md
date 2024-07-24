@@ -2,7 +2,7 @@
 
 <p align="center">
   <picture>
-    <img alt="BERT with TensorFlow Model Garden" src="https://github.com/stefan-it/model-garden-lms/raw/main/bert_tf_model_garden.webp" style="max-width: 100%;">
+    <img alt="BERT with TensorFlow Model Garden" src="https://github.com/stefan-it/model-garden-lms/raw/main/bert_tf_model_garden.png" style="max-width: 100%;">
   </picture>
   <br/>
 </p>
