@@ -185,4 +185,60 @@ All TFRecords need to be uploaded to a GCP Bucket (the `service` TPU user must h
 
 ## Start Pretraining
 
-TODO!
+The pretraining needs to be started within the `models/official/nlp/` folder. The following configuration file `fineweb_pretrain.yaml` is used that includes all necessary model and training information:
+
+```yaml
+task:
+  init_checkpoint: ''
+  model:
+    cls_heads: [{activation: tanh, cls_token_idx: 0, dropout_rate: 0.1, inner_dim: 768, name: next_sentence, num_classes: 2}]
+    encoder:
+      type: bert_v2
+      bert_v2:
+        vocab_size: 64000
+  train_data:
+    drop_remainder: true
+    global_batch_size: 512
+    input_path: 'gs://fineweb-lms/tfrecords-op/*.tfrecord'
+    is_training: true
+    max_predictions_per_seq: 76
+    seq_length: 512
+    use_next_sentence_label: true
+    use_position_id: false
+    use_v2_feature_names: true
+trainer:
+  checkpoint_interval: 50000
+  max_to_keep: 300
+  optimizer_config:
+    learning_rate:
+      polynomial:
+        cycle: false
+        decay_steps: 1000000
+        end_learning_rate: 0.0
+        initial_learning_rate: 0.0001
+        power: 1.0
+      type: polynomial
+    optimizer:
+      type: adamw
+    warmup:
+      polynomial:
+        power: 1
+        warmup_steps: 10000
+      type: polynomial
+  steps_per_loop: 1000
+  summary_interval: 1000
+  train_steps: 1000000
+  validation_interval: 1000
+  validation_steps: 64
+```
+
+Then the pretraining can be started by running:
+
+```bash
+$ python3 train.py --experiment=bert/pretraining \
+--config_file=fineweb_pretrain.yaml \
+--params_override=runtime.distribution_strategy=tpu \
+--tpu=fineweb \
+--model_dir=gs://fineweb-lms/models/fineweb-10BT-bert \
+--mode=train
+```
