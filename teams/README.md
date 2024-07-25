@@ -1,6 +1,6 @@
 # TEAMS Pretraining
 
-We use the same pretraining data as used for [BERT Pretraining](bert/README.md). This is great because we can reuse the created TFRecords, which also allows us to compare BERT and TEAMS directly, eliminating potential differences in pretraining data generation.
+We use the same pretraining data as used for [BERT Pretraining](../bert/README.md). This is great because we can reuse the created TFRecords, which also allows us to compare BERT and TEAMS directly, eliminating potential differences in pretraining data generation.
 
 # Start Pretraining
 
