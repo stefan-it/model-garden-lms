@@ -13,18 +13,18 @@ This repository showcases language model pretraining with the awesome [TensorFlo
 
 The following LMs are currently supported:
 
-* [BERT Pretraining](https://aclanthology.org/N19-1423/) - see [pretraining instructions](BERT-Pretraining.md)
-* [Token Dropping for efficient BERT Pretraining](https://aclanthology.org/2022.acl-long.262/) - see [pretraining instructions](Token-Dropping-BERT-Pretraining.md)
-* [Training ELECTRA Augmented with Multi-word Selection](https://aclanthology.org/2021.findings-acl.219/) (TEAMS) - see [pretraining instructions](TEAMS-Pretraining.md)
+* [BERT Pretraining](https://aclanthology.org/N19-1423/) - see [pretraining instructions](bert/README.md)
+* [Token Dropping for efficient BERT Pretraining](https://aclanthology.org/2022.acl-long.262/) - see [pretraining instructions](token-dropping-bert/README.md)
+* [Training ELECTRA Augmented with Multi-word Selection](https://aclanthology.org/2021.findings-acl.219/) (TEAMS) - see [pretraining instructions](teams/README.md)
 
 
 ## 💡 Features
 
 Additionally, the following features are provided:
 
-* A cheatsheet for TPU VM creation (including all necessary dependencies to pretrain models with TF Model Garden library), which can be found [here](TPU-VM-Cheatsheet.md).
-* An extended pretraining data generation script that allows, for example, the use of tokenizers from the Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](Pretraining-Data-Generation.md).
-* Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models, which can be found [here](Model-Conversion.md).
+* A cheatsheet for TPU VM creation (including all necessary dependencies to pretrain models with TF Model Garden library), which can be found [here](cheatsheet/README.md).
+* An extended pretraining data generation script that allows, for example, the use of tokenizers from the Hugging Face Model Hub or different data packing strategies (Original BERT packing or RoBERTa-like packing), which can be found [here](utils/README.md).
+* Conversion scripts that convert TF Model Garden weights to Hugging Face Transformers-compatible models, which can be found [here](conversion/README.md).
 
 ## 🏡 Model Zoo
 
