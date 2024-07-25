@@ -53,7 +53,7 @@ task:
         num_attention_heads: 12
         num_layers: 12
         type_vocab_size: 2
-        vocab_size: 32000
+        vocab_size: 64000
         token_loss_init_value: 10.0
         token_loss_beta: 0.995
         token_keep_k: 256
