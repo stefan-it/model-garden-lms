@@ -33,24 +33,7 @@ $ gcloud alpha compute tpus tpu-vm ssh fineweb --zone $ZONE --worker 0
 
 Please start an interactive `tmux` session and install the following dependencies:
 
-```bash
-$ tmux # Do not forget this!!!
-$ sudo apt update
-
-$ git clone https://github.com/tensorflow/models.git
-$ cd models/
-$ git checkout v2.16.0
-$ export PYTHONPATH=$(pwd)
-$ export PATH=$PATH:/home/$USER/.local/bin
-
-$ sudo apt-get install -y libgl1
-
-$ pip3 install gin-config tensorflow_datasets scipy sentencepiece tensorflow_hub scikit-learn seqeval sacrebleu immutabledict pycocotools opencv-python
-
-$ cd official/projects/teams/
-
-$ python3 train.py --help
-```
+https://github.com/stefan-it/model-garden-lms/blob/222d94ebaa16257bef8265739a6b2d1c89dd61e0/cheatsheet/install.sh#L2-L16
 
 Some notes on that:
 
