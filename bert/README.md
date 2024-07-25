@@ -47,7 +47,7 @@ The `vocab.txt` together with a `config.json` and `tokenizer_config.json` is the
 After the vocab generation and uploading it to the Model Hub, our `create_pretraining_data.py` script can be used to create TFRecords that are later used for pretraining the model:
 
 ```bash
-find ./pretraining-corpus/part-{00..14}/ -type f -iname "part-*" | sort | 
+find ./pretraining-corpus/part-{00..14}/ -type f -iname "part-*" | sort |
 xargs -I% -P 6 \
 python3 create_pretraining_data.py \
 --max_seq_length=512 \
@@ -61,6 +61,8 @@ python3 create_pretraining_data.py \
 --packing_strategy original \
 --tokenizer_model_id stefan-it/fineweb-lms-vocab-64000
 ```
+
+More details about pretraining data generation can be found in [this section](../utils/README.md).
 
 All TFRecords need to be uploaded to a GCP Bucket (the `service` TPU user must have `Storage Administrator` permissions). More hints can be found in this [section](https://github.com/GermanT5/pre-training?tab=readme-ov-file#preparing-gcp-bucket) about preparing a GCP bucket.
 
