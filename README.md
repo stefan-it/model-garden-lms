@@ -30,9 +30,9 @@ Additionally, the following features are provided:
 
 Here's an overview of demo models that are pretrained for this repository:
 
-* FineWeb BERT
-* FineWeb Token Dropping BERT
-* FineWeb TEAMS (Discriminator and Generator)
+* FineWeb BERT (Alreay trained, coming soon!)
+* FineWeb Token Dropping BERT (Coming soon!)
+* FineWeb TEAMS (Discriminator and Generator, already trained, coming soon!)
 
 ## ❤️ Acknowledgements
 
