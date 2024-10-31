@@ -49,7 +49,7 @@ After the vocab generation and uploading it to the Model Hub, our `create_pretra
 ```bash
 find ./pretraining-corpus/part-{00..14}/ -type f -iname "part-*" | sort |
 xargs -I% -P 6 \
-python3 create_pretraining_data.py \
+python3 ../utils/create_pretraining_data.py \
 --max_seq_length=512 \
 --max_predictions_per_seq=76 \
 --masked_lm_prob=0.15 \
