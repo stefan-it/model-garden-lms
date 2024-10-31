@@ -47,7 +47,7 @@ class PlaintextWriter(DiskWriter):
         content = document["text"]
 
         if self.perform_sentence_splitting:
-            content = content.replace("\n", "")
+            content = re.sub(r"\n+", " ", content).strip()
             sentences = sent_tokenize(content, self.sentence_splitting_language)
             file_handler.write("\n".join(sentences) + "\n\n")
         else:
