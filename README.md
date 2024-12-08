@@ -28,12 +28,14 @@ Additionally, the following features are provided:
 
 ## 🏡 Model Zoo
 
-Here's an overview of demo models that are pretrained for this repository:
+### FineWeb-LMs
 
-* FineWeb BERT (Alreay trained, coming soon!)
-* FineWeb Token Dropping BERT (Coming soon!)
-* FineWeb TEAMS (Discriminator and Generator, already trained, coming soon!)
+Following LMs were pretrained on the (10BT subset) of the famous [FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) and [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) dataset:
+
+* BERT-based - find the [best model checkpoint here](https://huggingface.co/model-garden-lms/bert-base-finewebs-951k)
 
 ## ❤️ Acknowledgements
 
 This repository is the outcome of the last two years of working with TPUs from the awesome [TRC program](https://sites.research.google/trc/about/) and the [TensorFlow Model Garden](https://github.com/tensorflow/models) library.
+
+Made from Bavarian Oberland with ❤️ and 🥨.
