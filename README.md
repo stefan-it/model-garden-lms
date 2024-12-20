@@ -33,6 +33,12 @@ Additionally, the following features are provided:
 Following LMs were pretrained on the (10BT subset) of the famous [FineWeb](https://huggingface.co/datasets/HuggingFaceFW/fineweb) and [FineWeb-Edu](https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu) dataset:
 
 * BERT-based - find the [best model checkpoint here](https://huggingface.co/model-garden-lms/bert-base-finewebs-951k)
+* Token Dropping BERT-based - find the [best model checkpoint here](https://huggingface.co/model-garden-lms/bert-base-token-dropping-finewebs-901k)
+* TEAMS-based - fine the [best model checkpoint here](https://huggingface.co/model-garden-lms/teams-base-finewebs-1m)
+
+All models can be found in the [TensorFlow Model Garden LMs](https://huggingface.co/model-garden-lms) organization on the Model Hub and in [this collection](https://huggingface.co/collections/stefan-it/fineweb-lms-67561ed9d83c390221aaa2d4).
+
+Detailed evaluation results with the [ScandEval](https://github.com/ScandEval/ScandEval) library are available in [this repository](https://huggingface.co/datasets/model-garden-lms/finewebs-scandeval-results).
 
 ## ❤️ Acknowledgements
 
